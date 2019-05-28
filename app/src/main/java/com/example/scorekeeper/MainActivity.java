@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
     int mScore1, mScore2;
     TextView mScoreText1, mScoreText2;
 
+    static final String STATE_SCORE_1 = "Team 1 Score";
+    static final String STATE_SCORE_2 = "Team 2 Score";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,22 @@ public class MainActivity extends AppCompatActivity {
 
         mScoreText1 = findViewById(R.id.team1scoreLabel);
         mScoreText2 = findViewById(R.id.team2scoreLabel);
+
+        if (savedInstanceState != null) {
+            mScore1 = savedInstanceState.getInt(STATE_SCORE_1);
+            mScore2 = savedInstanceState.getInt(STATE_SCORE_2);
+
+            mScoreText1.setText(String.valueOf(mScore1));
+            mScoreText2.setText(String.valueOf(mScore2));
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(STATE_SCORE_1, mScore1);
+        outState.putInt(STATE_SCORE_2, mScore2);
+
+        super.onSaveInstanceState(outState);
     }
 
     @Override
