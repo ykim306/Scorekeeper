@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Scorekeeper</string>
+    <string name="team_1">Team 1</string>
+    <string name="_0">0</string>
+    <string name="team_1_add_button_description">Team One Add Button</string>
+    <string name="team_1_subtract_button_description">Team One Subtract Button</string>
+    <string name="team_2">Team 2</string>
+    <string name="team_2_add_button_description">Team Two Add Button</string>
+    <string name="team_2_subtract_button_description">Team Two Subtract Button</string>
 </resources>
