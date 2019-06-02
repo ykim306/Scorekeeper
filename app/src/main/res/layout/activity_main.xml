@@ -7,22 +7,95 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/team1label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/team1label"
-        android:text="Team 1"
+        android:text="@string/team_1"
         app:layout_constraintBottom_toTopOf="@id/team1scoreLabel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/TeamText" />
 
     <TextView
         android:id="@+id/team1scoreLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        app:layout_constraintTop_toBottomOf="@+id/team1label"
+        android:text="@string/_0"
+        app:layout_constraintBottom_toTopOf="@+id/team2label"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/team1label"
+        style="@style/ScoreText" />
+
+    <ImageButton
+        android:id="@+id/team1subtractButton"
+        style="@style/MinusButtons"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:contentDescription="@string/team_1_subtract_button_description"
+        android:onClick="decreaseScore"
+        app:layout_constraintBottom_toTopOf="@+id/team2label"
+        app:layout_constraintEnd_toStartOf="@+id/team1scoreLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team1label" />
+
+    <ImageButton
+        android:id="@+id/team1addButton"
+        style="@style/PlusButtons"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:contentDescription="@string/team_1_add_button_description"
+        android:onClick="increaseScore"
+        app:layout_constraintBottom_toTopOf="@+id/team2label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/team1scoreLabel"
+        app:layout_constraintTop_toBottomOf="@+id/team1label" />
+
+    <TextView
+        android:id="@+id/team2label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/team_2"
+        app:layout_constraintBottom_toTopOf="@+id/team2scoreLabel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/team1scoreLabel"
+        style="@style/TeamText" />
+
+    <TextView
+        android:id="@+id/team2scoreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team2label"
+        style="@style/ScoreText" />
+
+    <ImageButton
+        android:id="@+id/team2subtractButton"
+        style="@style/MinusButtons"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:contentDescription="@string/team_2_subtract_button_description"
+        android:onClick="decreaseScore"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/team2scoreLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team2label" />
+
+    <ImageButton
+        android:id="@+id/team2addButton"
+        style="@style/PlusButtons"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:contentDescription="@string/team_2_add_button_description"
+        android:onClick="increaseScore"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/team2scoreLabel"
+        app:layout_constraintTop_toBottomOf="@+id/team2label" />
 
 </android.support.constraint.ConstraintLayout>
